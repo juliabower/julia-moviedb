@@ -1,0 +1,9 @@
+{
+  "name": "julia-moviedb",
+  "version": "1.0.0",
+  "description": "dzn frontend coding challenge",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Julia Bower",
+  "license": "ISC"
+}
