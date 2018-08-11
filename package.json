@@ -5,5 +5,9 @@
   "main": "index.js",
   "scripts": {},
   "author": "Julia Bower",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
 }
