@@ -16,22 +16,25 @@ class SearchBar extends Component {
     this.setState({ search: e.target.value });
   }
 
-  search = () => {
+  search = (e) => {
+    e.preventDefault();
     this.props.search(this.state.search);
   }
 
   render() {
     return (
-      <div className="row" >
-        <div className="col-lg-12">
-          <div className="input-group">
-            <input type="text" className="form-control" placeholder="e.g. Harry Potter" onChange={this.updateSearch} />
-            <span className="input-group-btn">
-              <button className="btn btn-default btn-go" type="button" onClick={this.search}>Go</button>
-            </span>
+      <form onSubmit={this.search}>
+        <div className="row" >
+          <div className="col-lg-12">
+            <div className="input-group">
+              <input type="text" className="form-control" placeholder="e.g. Harry Potter" onChange={this.updateSearch} />
+              <span className="input-group-btn">
+                <button className="btn btn-default btn-go" type="button" onClick={this.search}>Go</button>
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     );
   }
 }
