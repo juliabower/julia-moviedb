@@ -8,5 +8,5 @@ const getUrl = (query, page) => {
 export const searchMovie = (query, page = 1) => {
   return fetch(getUrl(query, page))
     .then(response => response.json())
-    .catch(err);
+    .catch(error => error);
 }

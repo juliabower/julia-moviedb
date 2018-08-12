@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-import { searchMovie } from "../api/movieDB-api";
+import PropTypes from "prop-types";
 class SearchBar extends Component {
+  static propTypes = {
+    search: PropTypes.func.isRequired,
+  };
+
   componentDidMount() {
     this.state = {
       search: '',
@@ -12,12 +16,7 @@ class SearchBar extends Component {
   }
 
   search = () => {
-    this.setState({ error: false });
-    searchMovie(this.state.search).then(response => {
-      debugger;
-      this.setState({ results: response.results });
-    }).catch(error => this.setState({ error: true })
-    );
+    this.props.search(this.state.search);
   }
 
   render() {
