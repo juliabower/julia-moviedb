@@ -5,7 +5,8 @@ class SearchBar extends Component {
     search: PropTypes.func.isRequired,
   };
 
-  componentDidMount() {
+  constructor(props) {
+    super(props);
     this.state = {
       search: '',
     };

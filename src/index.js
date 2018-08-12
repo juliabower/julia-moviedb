@@ -2,14 +2,16 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import SearchBar from "./components/SearchBar";
+import SearchResults from "./components/SearchResults";
 import { searchMovie } from "./api/movieDB-api";
 import "./styles.scss";
 
 class Index extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
     this.state = {
-      results: null,
       error: false,
+      results: [],
     };
   }
 
@@ -25,7 +27,8 @@ class Index extends Component {
       <main className="container">
         <h1>Search for a movie</h1>
         <SearchBar search={this.search} />
-        </main>
+        {this.state.results && <SearchResults results={this.state.results} />}
+      </main>
     );
   }
 };
