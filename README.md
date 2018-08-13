@@ -17,3 +17,11 @@ npm start
 This should automatically open the browser for you.
 
 ## Running the unit tests
+```
+npm run test
+```
+### Test coverage
+```
+npm run test:coverage
+```
+There is only one test file due to time contraints, however, it shows my general approach to unit testing.
