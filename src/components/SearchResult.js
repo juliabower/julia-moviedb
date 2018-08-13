@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import moment from "moment";
 
 class SearchResult extends Component {
   static propTypes = {
@@ -7,10 +8,10 @@ class SearchResult extends Component {
   };
 
   render() {
-    const { title, overview } = this.props.result;
+    const { title, overview, release_date } = this.props.result;
     return (
-      <div className="panel panel-default">
-        <h3>{title}</h3>
+      <div className={`panel panel-default${title.includes('Harry Potter') ? ' harry-potter' : ''}`}>
+        <h4>{title}, {moment(release_date).year()}</h4>
         <div>{overview}</div>
       </div>
     );

@@ -18,9 +18,9 @@ class Index extends Component {
 
   search = (query, page) => {
     this.setState({ query: query, isSearching: true });
-    searchMovie(query, page).then(response => {
+    query.length > 0 && searchMovie(query, page).then(response => {
       this.setState({ results: response.results, totalPages: response.total_pages, isSearching: false, hasSearched: true });
-    }).catch(error => {debugger;this.setState({ error: true });});
+    });
   }
 
   getPage = (page) => {
